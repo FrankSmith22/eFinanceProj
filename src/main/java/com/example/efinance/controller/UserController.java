@@ -47,4 +47,15 @@ public class UserController {
         return "account_view";
     }
 
+    @GetMapping("/loanApplication")
+    public String showApplication(Model model){
+        return "loan_select";
+    }
+
+    @PostMapping("/loanApplication")
+    public String showFields(Model model){
+        System.out.println("post method called");
+        return "loan_select";
+    }
+
 }
