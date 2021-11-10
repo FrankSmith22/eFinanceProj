@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Personal Loan Application</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container text-center">
+        <div class="row">
+            <div class="col">
+                <h1>Personal Loan Application</h1>
+                <form action="#" th:action="@{/PersonalLoan}" th:object="${personalLoan}" method="post">
+                    <label>Full Name</label>
+                    <input type="text" th:field="*{fullName}"/>
+                    <label>Address Line 1</label>
+                    <input type="text" th:field="*{addressLine1}">
+                    <label>Address Line 2</label>
+                    <input type="text" th:field="*{addressLine2}">
+                    <label>Country</label>
+                    <input type="text" th:field="*{country}">
+                    <label>State</label>
+                    <input type="text" th:field="*{state}">
+                    <label>Zip Code</label>
+                    <input type="text" th:field="*{zipCode}">
+                    <label>Phone Number</label>
+                    <input type="text" th:field="*{phoneNumber}">
+                    <label>Income</label>
+                    <input type="text" th:field="*{income}">
+                    <label>Length of Loan in Months</label>
+                    <input type="text" th:field="*{loanLengthInMonths}">
+                    <label>Loan amount</label>
+                    <input type="text" th:field="*{loanAmount}">
+                    <input type="submit" class="btn btn-success">Submit Application</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -2,6 +2,7 @@ package com.example.efinance.controller;
 
 import com.example.efinance.model.*;
 import com.example.efinance.repository.UserRepository;
+import com.example.efinance.service.PersonalLoanService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,8 @@ public class UserController {
 
     @Autowired
     private UserRepository userRepository;
+    @Autowired
+    private PersonalLoanService personalLoanService;
 
     @GetMapping("/")
     public String viewHomePage(Model model)
@@ -52,16 +55,31 @@ public class UserController {
         return "loan_select";
     }
 
-    @PostMapping("/loanApplication")
-    public String showFields(Model model, Loan loan, AutoLoan autoLoan, BusinessLoan businessLoan, StudentLoan studentLoan){
-        System.out.println("post method called");
+    @GetMapping("/PersonalLoan")
+    public String showPersonalLoan(Model model){
+        model.addAttribute("personalLoan", new Loan());
+        return "personal_loan_application";
+    }
 
-        // Probably best to use a switch case to figure out which html page should be shown
-        // the currently selected option in the dropdown is probably in the model parameter (using getAttribute)
-        // Will need to modify loan_select.html then to add the selected value to the model upon submission
+    @PostMapping("/PersonalLoan")
+    public String showPersonalLoan(@ModelAttribute("personalLoan") Loan personalLoan, Model model){
+        personalLoanService.saveLoan(personalLoan);
+        return "thank_you";
+    }
 
+    @GetMapping("/AutoLoan")
+    public String showAutoLoan(Model model){
+        return "auto_loan_application";
+    }
 
-        return "loan_select";
+    @GetMapping("/BusinessLoan")
+    public String showBusinessLoan(Model model){
+        return "business_loan_application";
+    }
+
+    @GetMapping("/StudentLoan")
+    public String showStudentLoan(Model model){
+        return "student_loan_application";
     }
 
 }

@@ -13,17 +13,21 @@
             <div class="col col-md-6">
                 <h1 class="text-primary">Loan Application</h1>
                 <p>Please select the type of loan you would like to apply to from the dropdown below</p>
-                <form method="post" th:action="@{/loanApplication}">
-                    <select class="form-select">
-                        <option th:value="auto" th:text="Auto"></option>
-                        <option th:value="home" th:text="Home" disabled>Home</option>
-                        <option th:value="business" th:text="Business"></option>
-                        <option th:value="personal" th:text="Personal"></option>
-                        <option th:value="student" th:text="Student"></option>
-                    </select>
-                    <br>
-                    <input type="submit" class="btn btn-success" value="View fields" />
-                </form>
+                <a th:href="@{/PersonalLoan}" class="btn btn-success">Personal Loan</a>
+                <a th:href="@{/AutoLoan}" class="btn btn-success">Auto Loan</a>
+                <a th:href="@{/BusinessLoan}" class="btn btn-success">Business Loan</a>
+                <a th:href="@{/StudentLoan}" class="btn btn-success">Student Loan</a>
+<!--                <form method="post" th:action="@{/loanApplication}">-->
+<!--                    <select class="form-select">-->
+<!--                        <option th:value="auto" th:text="Auto"></option>-->
+<!--                        <option th:value="home" th:text="Home" disabled>Home</option>-->
+<!--                        <option th:value="business" th:text="Business"></option>-->
+<!--                        <option th:value="personal" th:text="Personal"></option>-->
+<!--                        <option th:value="student" th:text="Student"></option>-->
+<!--                    </select>-->
+<!--                    <br>-->
+<!--                    <input type="submit" class="btn btn-success" value="View fields" />-->
+<!--                </form>-->
             </div>
         </div>
     </div>
