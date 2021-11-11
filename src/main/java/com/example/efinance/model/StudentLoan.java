@@ -32,7 +32,9 @@ public class StudentLoan implements Serializable {
     @Column(name="school_name")
     private String schoolName;
     @Column(name="gpa")
-    private long gpa;
+    private double gpa;
+    @Column(name="num_semesters")
+    private long numSemesters;
 
     public long getLoanid() {
         return loanid;
@@ -130,11 +132,11 @@ public class StudentLoan implements Serializable {
         this.schoolName = schoolName;
     }
 
-    public long getGpa() {
+    public double getGpa() {
         return gpa;
     }
 
-    public void setGpa(long gpa) {
+    public void setGpa(double gpa) {
         this.gpa = gpa;
     }
 
@@ -145,7 +147,4 @@ public class StudentLoan implements Serializable {
     public void setNumSemesters(long numSemesters) {
         this.numSemesters = numSemesters;
     }
-
-    @Column(name="num_semesters")
-    private long numSemesters;
 }

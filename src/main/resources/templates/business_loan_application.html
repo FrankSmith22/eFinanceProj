@@ -8,6 +8,101 @@
     <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 </head>
 <body>
-<h1>Hello I am the Business Loan Application</h1>
+<div class="container">
+    <div class="row">
+        <div class="col col-md-6 mx-auto">
+            <h1 class="text-center text-primary">Business Loan Application</h1>
+            <div class="card">
+                <div class="card-body">
+                    <form action="#" th:action="@{/BusinessLoan}" th:object="${businessLoan}" method="post">
+                        <div class="form-group row">
+                            <label class="col-sm-6 col-form-label">Full Name</label>
+                            <div class="col">
+                                <input class="form-control" type="text" th:field="*{fullName}"/>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-6 col-form-label">Address Line 1</label>
+                            <div class="col">
+                                <input class="form-control" type="text" th:field="*{addressLine1}"/>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-6 col-form-label">Address Line 2</label>
+                            <div class="col">
+                                <input class="form-control" type="text" th:field="*{addressLine2}"/>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-6 col-form-label">Country</label>
+                            <div class="col">
+                                <input class="form-control" type="text" th:field="*{country}"/>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-6 col-form-label">State</label>
+                            <div class="col">
+                                <input class="form-control" type="text" th:field="*{state}"/>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-6 col-form-label">Zip Code</label>
+                            <div class="col">
+                                <input class="form-control" type="text" th:field="*{zipCode}"/>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-6 col-form-label">Phone Number</label>
+                            <div class="col">
+                                <input class="form-control" type="text" th:field="*{phoneNumber}"/>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-6 col-form-label">Income</label>
+                            <div class="col">
+                                <input class="form-control" type="text" th:field="*{income}"/>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-6 col-form-label">Loan Length (months)</label>
+                            <div class="col">
+                                <input class="form-control" type="text" th:field="*{loanLengthInMonths}"/>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-6 col-form-label">Loan Amount</label>
+                            <div class="col">
+                                <input class="form-control" type="text" th:field="*{loanAmount}"/>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-6 col-form-label">Company Name</label>
+                            <div class="col">
+                                <input class="form-control" type="text" th:field="*{companyName}"/>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-6 col-form-label">Number of Employees</label>
+                            <div class="col">
+                                <input class="form-control" type="text" th:field="*{numEmployees}"/>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-6 col-form-label">Revenue</label>
+                            <div class="col">
+                                <input class="form-control" type="text" th:field="*{revenue}"/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <input type="submit" class="btn btn-success"></a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
