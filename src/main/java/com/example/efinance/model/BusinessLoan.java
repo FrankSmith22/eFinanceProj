@@ -9,6 +9,9 @@ public class BusinessLoan implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long loanid;
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
     @Column(name="full_name")
     private String fullName;
     @Column(name="address_line_1")
@@ -42,6 +45,14 @@ public class BusinessLoan implements Serializable {
 
     public void setLoanid(long loanid) {
         this.loanid = loanid;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public String getFullName() {

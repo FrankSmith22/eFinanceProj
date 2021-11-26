@@ -2,8 +2,7 @@ package com.example.efinance.controller;
 
 import com.example.efinance.model.*;
 import com.example.efinance.repository.UserRepo;
-import com.example.efinance.service.PLoanServ;
-import com.example.efinance.service.UserServImpl;
+import com.example.efinance.service.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +26,13 @@ public class UserController {
     @Autowired
     private UserServImpl userServ;
     @Autowired
+    private ALoanServ aLoanServ;
+    @Autowired
+    private BLoanServ bLoanServ;
+    @Autowired
     private PLoanServ pLoanServ;
+    @Autowired
+    private SLoanServ sLoanServ;
 
     @GetMapping("/")
     public String viewHomePage(Model model)

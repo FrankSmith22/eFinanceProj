@@ -77,22 +77,105 @@
             </tbody>
         </table>
     </div>
-    <div>
-        <h3>Personal Loans</h3>
+    <h3>Auto Loans</h3>
+    <div class="table-responsive-md">
         <table class="table table-striped table-success">
             <thead>
-                <tr>
-                    <th>Loan ID</th>
-                    <th>Loan Amount</th>
-                    <th>Loan Length (in months)</th>
-                </tr>
+            <tr>
+                <th>Loan ID</th>
+                <th>Name</th>
+                <th>Loan Amount</th>
+                <th>Loan Length (in months)</th>
+                <th>Car Make</th>
+                <th>Car Model</th>
+                <th>Car Year</th>
+            </tr>
             </thead>
             <tbody>
-                <tr th:each="personalLoan: ${pLoanList}">
-                    <td th:text="${personalLoan.loanid}">null</td>
-                    <td th:text="${personalLoan.loanAmount}">null</td>
-                    <td th:text="${personalLoan.loanLengthInMonths}">null</td>
-                </tr>
+            <tr th:each="autoLoan: ${aLoanList}">
+                <td th:text="${autoLoan.loanid}">null</td>
+                <td th:text="${autoLoan.fullName}">null</td>
+                <td th:text="${autoLoan.loanAmount}">null</td>
+                <td th:text="${autoLoan.loanLengthInMonths}">null</td>
+                <td th:text="${autoLoan.carMake}"></td>
+                <td th:text="${autoLoan.carModel}"></td>
+                <td th:text="${autoLoan.carYear}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <h3>Business Loans</h3>
+    <div class="table-responsive-md">
+        <table class="table table-striped table-success">
+            <thead>
+            <tr>
+                <th>Loan ID</th>
+                <th>Name</th>
+                <th>Loan Amount</th>
+                <th>Loan Length (in months)</th>
+                <th>Company Name</th>
+                <th>Number of Employees</th>
+                <th>Revenue</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="businessLoan: ${bLoanList}">
+                <td th:text="${businessLoan.loanid}">null</td>
+                <td th:text="${businessLoan.fullName}">null</td>
+                <td th:text="${businessLoan.loanAmount}">null</td>
+                <td th:text="${businessLoan.loanLengthInMonths}">null</td>
+                <td th:text="${businessLoan.companyName}">null</td>
+                <td th:text="${businessLoan.numEmployees}">null</td>
+                <td th:text="${businessLoan.revenue}">null</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <h3>Personal Loans</h3>
+    <div class="table-responsive-md">
+        <table class="table table-striped table-success">
+            <thead>
+            <tr>
+                <th>Loan ID</th>
+                <th>Name</th>
+                <th>Loan Amount</th>
+                <th>Loan Length (in months)</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="personalLoan: ${pLoanList}">
+                <td th:text="${personalLoan.loanid}">null</td>
+                <td th:text="${personalLoan.fullName}">null</td>
+                <td th:text="${personalLoan.loanAmount}">null</td>
+                <td th:text="${personalLoan.loanLengthInMonths}">null</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <h3>Student Loans</h3>
+    <div class="table-responsive-md">
+        <table class="table table-striped table-success">
+            <thead>
+            <tr>
+                <th>Loan ID</th>
+                <td>Name</td>
+                <th>Loan Amount</th>
+                <th>Loan Length (in months)</th>
+                <th>School Name</th>
+                <th>Reported GPA</th>
+                <th>Number of Semesters</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="studentLoan: ${sLoanList}">
+                <td th:text="${studentLoan.loanid}">null</td>
+                <td th:text="${studentLoan.fullName}">null</td>
+                <td th:text="${studentLoan.loanAmount}">null</td>
+                <td th:text="${studentLoan.loanLengthInMonths}">null</td>
+                <td th:text="${studentLoan.schoolName}">null</td>
+                <td th:text="${studentLoan.gpa}">null</td>
+                <td th:text="${studentLoan.numSemesters}">null</td>
+            </tr>
             </tbody>
         </table>
     </div>

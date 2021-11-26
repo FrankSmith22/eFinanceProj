@@ -62,6 +62,9 @@ public class LoanController {
 
     @PostMapping("/auto_loan")
     public String showAutoLoan(@ModelAttribute("autoLoan") AutoLoan autoLoan, Model model){
+        Authentication userAuthInfo = SecurityContextHolder.getContext().getAuthentication();
+        String email = ((UserDetails)userAuthInfo.getPrincipal()).getUsername();
+        autoLoan.setUser(userServ.accessByEmail(email));
         aLoanServ.saveLoan(autoLoan);
         return "thank_you";
     }
@@ -76,6 +79,9 @@ public class LoanController {
 
     @PostMapping("/business_loan")
     public String showBusinessLoan(@ModelAttribute("businessLoan") BusinessLoan businessLoan, Model model){
+        Authentication userAuthInfo = SecurityContextHolder.getContext().getAuthentication();
+        String email = ((UserDetails)userAuthInfo.getPrincipal()).getUsername();
+        businessLoan.setUser(userServ.accessByEmail(email));
         bLoanServ.saveLoan(businessLoan);
         return "thank_you";
     }
@@ -90,6 +96,9 @@ public class LoanController {
 
     @PostMapping("/student_loan")
     public String showStudentLoan(@ModelAttribute("studentLoan") StudentLoan studentLoan, Model model){
+        Authentication userAuthInfo = SecurityContextHolder.getContext().getAuthentication();
+        String email = ((UserDetails)userAuthInfo.getPrincipal()).getUsername();
+        studentLoan.setUser(userServ.accessByEmail(email));
         sLoanServ.saveLoan(studentLoan);
         return "thank_you";
     }
