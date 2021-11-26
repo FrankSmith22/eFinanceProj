@@ -9,6 +9,7 @@ public class PersonalLoan implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long loanid;
+
     @Column(name="full_name")
     private String fullName;
     @Column(name="address_line_1")

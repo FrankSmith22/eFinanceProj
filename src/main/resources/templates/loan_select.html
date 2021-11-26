@@ -109,9 +109,9 @@
             <div class="col-3 offset-2 text-darker-footer">
                 <h4>User Information</h4>
                 <br/>
-                <span>User name: Log in first!</span>
+                <span>User name: [[${#request.userPrincipal.principal.userName}]]</span>
                 <br/>
-                <span>Email: Log in first!</span>
+                <span>Email: [[${#request.userPrincipal.principal.userEmail}]]</span>
                 <br>
                 <a th:href="@{/account_view}">Go To Account</a>
             </div>
