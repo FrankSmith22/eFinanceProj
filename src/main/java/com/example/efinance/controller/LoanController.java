@@ -4,11 +4,11 @@ import com.example.efinance.model.AutoLoan;
 import com.example.efinance.model.BusinessLoan;
 import com.example.efinance.model.PersonalLoan;
 import com.example.efinance.model.StudentLoan;
-import com.example.efinance.service.ALoanServ;
-import com.example.efinance.service.BLoanServ;
-import com.example.efinance.service.PLoanServ;
-import com.example.efinance.service.SLoanServ;
+import com.example.efinance.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,6 +27,8 @@ public class LoanController {
     private SLoanServ sLoanServ;
     @Autowired
     private ALoanServ aLoanServ;
+    @Autowired
+    private UserServImpl userServ;
 
     @GetMapping("/loan_application")
     public String showApplication(Model model){
@@ -43,6 +45,9 @@ public class LoanController {
 
     @PostMapping("/personal_loan")
     public String showPersonalLoan(@ModelAttribute("personalLoan") PersonalLoan personalLoan, Model model){
+        Authentication userAuthInfo = SecurityContextHolder.getContext().getAuthentication();
+        String email = ((UserDetails)userAuthInfo.getPrincipal()).getUsername();
+        personalLoan.setUser(userServ.accessByEmail(email));
         pLoanServ.saveLoan(personalLoan);
         return "thank_you";
     }

@@ -9,7 +9,9 @@ public class PersonalLoan implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long loanid;
-
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
     @Column(name="full_name")
     private String fullName;
     @Column(name="address_line_1")
@@ -57,6 +59,22 @@ public class PersonalLoan implements Serializable {
 
     public String getCountry() {
         return country;
+    }
+
+    public long getLoanid() {
+        return loanid;
+    }
+
+    public void setLoanid(long loanid) {
+        this.loanid = loanid;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public void setCountry(String country) {
