@@ -5,7 +5,7 @@ import java.io.Serializable;
 
 @Entity
 @Table(name="personal_loan")
-public class Loan implements Serializable {
+public class PersonalLoan implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long loanid;

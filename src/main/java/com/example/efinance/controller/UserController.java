@@ -1,11 +1,7 @@
 package com.example.efinance.controller;
 
 import com.example.efinance.model.*;
-import com.example.efinance.repository.UserRepository;
-import com.example.efinance.service.AutoLoanService;
-import com.example.efinance.service.BusinessLoanService;
-import com.example.efinance.service.PersonalLoanService;
-import com.example.efinance.service.StudentLoanService;
+import com.example.efinance.repository.UserRepo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,15 +16,7 @@ public class UserController {
     private static final Logger log = LoggerFactory.getLogger(UserController.class);
 
     @Autowired
-    private UserRepository userRepository;
-    @Autowired
-    private PersonalLoanService personalLoanService;
-    @Autowired
-    private BusinessLoanService businessLoanService;
-    @Autowired
-    private StudentLoanService studentLoanService;
-    @Autowired
-    private AutoLoanService autoLoanService;
+    private UserRepo userRepo;
 
     @GetMapping("/")
     public String viewHomePage(Model model)
@@ -49,7 +37,7 @@ public class UserController {
         String encodedPassword = passwordEncoder.encode(user.getPassword());
         user.setPassword(encodedPassword);
 
-        userRepository.save(user);
+        userRepo.save(user);
 
         return "register_success";
     }
@@ -57,67 +45,6 @@ public class UserController {
     public String listUsers(Model model) {
 
         return "account_view";
-    }
-
-    @GetMapping("/loanApplication")
-    public String showApplication(Model model){
-        return "loan_select";
-    }
-
-    //Personal Loan
-
-    @GetMapping("/PersonalLoan")
-    public String showPersonalLoan(Model model){
-        model.addAttribute("personalLoan", new Loan());
-        return "personal_loan_application";
-    }
-
-    @PostMapping("/PersonalLoan")
-    public String showPersonalLoan(@ModelAttribute("personalLoan") Loan personalLoan, Model model){
-        personalLoanService.saveLoan(personalLoan);
-        return "thank_you";
-    }
-
-    //Auto Loan
-
-    @GetMapping("/AutoLoan")
-    public String showAutoLoan(Model model){
-        model.addAttribute("autoLoan", new AutoLoan());
-        return "auto_loan_application";
-    }
-
-    @PostMapping("/AutoLoan")
-    public String showAutoLoan(@ModelAttribute("autoLoan") AutoLoan autoLoan, Model model){
-        autoLoanService.saveLoan(autoLoan);
-        return "thank_you";
-    }
-
-    //Business Loan
-
-    @GetMapping("/BusinessLoan")
-    public String showBusinessLoan(Model model){
-        model.addAttribute("businessLoan", new BusinessLoan());
-        return "business_loan_application";
-    }
-
-    @PostMapping("/BusinessLoan")
-    public String showBusinessLoan(@ModelAttribute("businessLoan") BusinessLoan businessLoan, Model model){
-        businessLoanService.saveLoan(businessLoan);
-        return "thank_you";
-    }
-
-    //Student Loan
-
-    @GetMapping("/StudentLoan")
-    public String showStudentLoan(Model model){
-        model.addAttribute("studentLoan", new StudentLoan());
-        return "student_loan_application";
-    }
-
-    @PostMapping("/StudentLoan")
-    public String showStudentLoan(@ModelAttribute("studentLoan") StudentLoan studentLoan, Model model){
-        studentLoanService.saveLoan(studentLoan);
-        return "thank_you";
     }
 
 }
