@@ -12,5 +12,5 @@ public class StudentLoanServiceImpl implements StudentLoanService{
     private StudentLoanRepository studentLoanRepository;
 
     @Override
-    public void saveLoan(StudentLoan studentLoan) { this.studentLoanRepository.save(studentLoan); }
+    public void saveStudentLoan(StudentLoan studentLoan) { this.studentLoanRepository.save(studentLoan); }
 }

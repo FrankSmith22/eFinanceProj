@@ -13,7 +13,7 @@ public class BusinessLoanServiceImpl implements BusinessLoanService{
 
 
     @Override
-    public void saveLoan(BusinessLoan businessLoan) {
+    public void saveBusinessLoan(BusinessLoan businessLoan) {
         this.businessLoanRepository.save(businessLoan);
     }
 }

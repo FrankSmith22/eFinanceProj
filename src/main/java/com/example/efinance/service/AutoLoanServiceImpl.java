@@ -12,5 +12,5 @@ public class AutoLoanServiceImpl implements AutoLoanService{
     private AutoLoanRepository autoLoanRepository;
 
     @Override
-    public void saveLoan(AutoLoan autoLoan) { this.autoLoanRepository.save(autoLoan); }
+    public void saveAutoLoan(AutoLoan autoLoan) { this.autoLoanRepository.save(autoLoan); }
 }
