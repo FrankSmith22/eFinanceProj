@@ -27,7 +27,7 @@
     </style>
 </head>
 <body>
-<nav class="navbar navbar-dark bg-dark navbar-expand-sm">
+<nav class="navbar navbar-dark bg-dark navbar-expand-sm mb-5">
     <div class="container">
         <div class="row">
             <div class="col">
@@ -42,6 +42,9 @@
                         <li class="nav-item mr-2">
                             <a class="nav-link disabled" th:href="@{/loan_application}">Apply for a New Loan</a>
                         </li>
+                        <li class="nav-item mr-2">
+                            <a class="nav-link disabled" th:href="@{/inbox}">Inbox</a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link disabled" th:href="@{/}">Log Out</a>
                         </li>
@@ -52,9 +55,9 @@
     </div>
 </nav>
 <div class="container text-center mb-5">
-    <h1>Welcome to eFinance</h1>
-    <h3><a th:href="@{/register}">Register</a></h3>
-    <h3><a th:href="@{/login}">Login</a></h3>
+    <h1 class="text-primary">Welcome to eFinance</h1>
+    <h3><a th:href="@{/register}" class="text-success">Register</a></h3>
+    <h3><a th:href="@{/login}" class="text-success">Login</a></h3>
 </div>
 
 <footer class="site-footer pt-3">

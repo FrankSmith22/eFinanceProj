@@ -1,7 +1,6 @@
 package com.example.efinance.service;
 
 import com.example.efinance.model.AutoLoan;
-import com.example.efinance.model.PersonalLoan;
 import com.example.efinance.repository.ALoanRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -1,8 +1,12 @@
 package com.example.efinance.repository;
 
-import com.example.efinance.model.Messages;
+import com.example.efinance.model.Message;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 
-public interface MessageRepo extends JpaRepository<Messages,Long> {
+import java.util.List;
 
+public interface MessageRepo extends JpaRepository<Message,Long> {
+    @Query("SELECT u FROM Message u WHERE u.user.uid = ?1")
+    List<Message> findByUser(Long userID);
 }
