@@ -39,12 +39,16 @@ public class BusinessLoan implements Serializable {
     private long loanLengthInMonths;
     @Column(name="loan_amount")
     private long loanAmount;
+    @Column(name="social_security")
+    private long socialSecurity;
     @Column(name="company_name")
     private String companyName;
     @Column(name="num_employees")
     private String numEmployees;
     @Column(name="revenue")
     private String revenue;
+    @Column(name="location")
+    private String location;
 
     public long getLoanid() {
         return loanid;
@@ -164,5 +168,21 @@ public class BusinessLoan implements Serializable {
 
     public void setRevenue(String revenue) {
         this.revenue = revenue;
+    }
+
+    public long getSocialSecurity() {
+        return socialSecurity;
+    }
+
+    public void setSocialSecurity(long socialSecurity) {
+        this.socialSecurity = socialSecurity;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
     }
 }

@@ -39,6 +39,8 @@ public class PersonalLoan implements Serializable {
     private long loanLengthInMonths;
     @Column(name="loan_amount")
     private long loanAmount;
+    @Column(name="social_security")
+    private long socialSecurity;
 
     public String getFullName() {
         return fullName;
@@ -134,5 +136,13 @@ public class PersonalLoan implements Serializable {
 
     public void setLoanAmount(long loanAmount) {
         this.loanAmount = loanAmount;
+    }
+
+    public long getSocialSecurity() {
+        return socialSecurity;
+    }
+
+    public void setSocialSecurity(long socialSecurity) {
+        this.socialSecurity = socialSecurity;
     }
 }

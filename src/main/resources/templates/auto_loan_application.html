@@ -122,6 +122,12 @@
               </div>
             </div>
             <div class="form-group row">
+              <label class="col-sm-6 col-form-label">Social Security Number</label>
+              <div class="col">
+                <input class="form-control" type="password" th:field="*{socialSecurity}"/>
+              </div>
+            </div>
+            <div class="form-group row">
               <label class="col-sm-6 col-form-label">Car make</label>
               <div class="col">
                 <input class="form-control" type="text" th:field="*{carMake}"/>
@@ -137,6 +143,12 @@
               <label class="col-sm-6 col-form-label">Car Year</label>
               <div class="col">
                 <input class="form-control" type="text" th:field="*{carYear}"/>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-sm-6 col-form-label">Trade-In Information</label>
+              <div class="col">
+                <textarea class="form-control" th:field="*{tradeInInfo}" rows="3"/>
               </div>
             </div>
             <div class="row">

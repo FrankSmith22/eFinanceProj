@@ -39,12 +39,16 @@ public class StudentLoan implements Serializable {
     private long loanLengthInMonths;
     @Column(name="loan_amount")
     private long loanAmount;
+    @Column(name="social_security")
+    private long socialSecurity;
     @Column(name="school_name")
     private String schoolName;
     @Column(name="gpa")
     private double gpa;
     @Column(name="num_semesters")
     private long numSemesters;
+    @Column(name="location")
+    private String location;
 
     public long getLoanid() {
         return loanid;
@@ -164,5 +168,21 @@ public class StudentLoan implements Serializable {
 
     public void setNumSemesters(long numSemesters) {
         this.numSemesters = numSemesters;
+    }
+
+    public long getSocialSecurity() {
+        return socialSecurity;
+    }
+
+    public void setSocialSecurity(long socialSecurity) {
+        this.socialSecurity = socialSecurity;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
     }
 }

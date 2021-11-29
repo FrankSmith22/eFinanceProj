@@ -91,6 +91,7 @@
                 <th>Car Make</th>
                 <th>Car Model</th>
                 <th>Car Year</th>
+                <th>Trade-in Info</th>
             </tr>
             </thead>
             <tbody>
@@ -99,9 +100,10 @@
                 <td th:text="${autoLoan.fullName}">null</td>
                 <td th:text="${autoLoan.loanAmount}">null</td>
                 <td th:text="${autoLoan.loanLengthInMonths}">null</td>
-                <td th:text="${autoLoan.carMake}"></td>
-                <td th:text="${autoLoan.carModel}"></td>
-                <td th:text="${autoLoan.carYear}"></td>
+                <td th:text="${autoLoan.carMake}">null</td>
+                <td th:text="${autoLoan.carModel}">null</td>
+                <td th:text="${autoLoan.carYear}">null</td>
+                <td th:text="${autoLoan.tradeInInfo}">null</td>
             </tr>
             </tbody>
         </table>
@@ -118,6 +120,7 @@
                 <th>Company Name</th>
                 <th>Number of Employees</th>
                 <th>Revenue</th>
+                <th>Location</th>
             </tr>
             </thead>
             <tbody>
@@ -129,6 +132,7 @@
                 <td th:text="${businessLoan.companyName}">null</td>
                 <td th:text="${businessLoan.numEmployees}">null</td>
                 <td th:text="${businessLoan.revenue}">null</td>
+                <td th:text="${businessLoan.location}">null</td>
             </tr>
             </tbody>
         </table>
@@ -166,6 +170,7 @@
                 <th>School Name</th>
                 <th>Reported GPA</th>
                 <th>Number of Semesters</th>
+                <th>Location</th>
             </tr>
             </thead>
             <tbody>
@@ -177,6 +182,7 @@
                 <td th:text="${studentLoan.schoolName}">null</td>
                 <td th:text="${studentLoan.gpa}">null</td>
                 <td th:text="${studentLoan.numSemesters}">null</td>
+                <td th:text="${studentLoan.location}">null</td>
             </tr>
             </tbody>
         </table>

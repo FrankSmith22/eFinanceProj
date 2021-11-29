@@ -39,12 +39,16 @@ public class AutoLoan implements Serializable {
     private long loanLengthInMonths;
     @Column(name="loan_amount")
     private long loanAmount;
+    @Column(name="social_security")
+    private long socialSecurity;
     @Column(name="car_make")
     private String carMake;
     @Column(name="car_model")
     private String carModel;
     @Column(name="car_year")
     private String carYear;
+    @Column(name="trade_in_info")
+    private String tradeInInfo;
 
     public long getLoanid() {
         return loanid;
@@ -164,5 +168,21 @@ public class AutoLoan implements Serializable {
 
     public void setCarYear(String carYear) {
         this.carYear = carYear;
+    }
+
+    public long getSocialSecurity() {
+        return socialSecurity;
+    }
+
+    public void setSocialSecurity(long socialSecurity) {
+        this.socialSecurity = socialSecurity;
+    }
+
+    public String getTradeInInfo() {
+        return tradeInInfo;
+    }
+
+    public void setTradeInInfo(String tradeInInfo) {
+        this.tradeInInfo = tradeInInfo;
     }
 }
