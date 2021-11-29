@@ -1,7 +1,13 @@
+/*
+
+BLoanServImpl.java
+Functionality for servicing BusinessLoan repository
+@Author(s) Frank Smith, Skyler Santiago, Dante Paniccia, Patel Parth
+
+*/
 package com.example.efinance.service;
 
 import com.example.efinance.model.BusinessLoan;
-import com.example.efinance.model.PersonalLoan;
 import com.example.efinance.repository.BLoanRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

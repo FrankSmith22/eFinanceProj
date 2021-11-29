@@ -1,3 +1,10 @@
+/*
+
+WebSecurityConfig.java
+Handles user login authentication
+@Author(s) Frank Smith, Skyler Santiago, Dante Paniccia, Patel Parth
+
+*/
 package com.example.efinance.Auth;
 
 import javax.sql.DataSource;

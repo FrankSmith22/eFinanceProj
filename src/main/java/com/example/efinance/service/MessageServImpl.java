@@ -1,3 +1,10 @@
+/*
+
+MessageServImpl.java
+Functionality for servicing Message repository
+@Author(s) Frank Smith, Skyler Santiago, Dante Paniccia, Patel Parth
+
+*/
 package com.example.efinance.service;
 
 import com.example.efinance.model.Message;

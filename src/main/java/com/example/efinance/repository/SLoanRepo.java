@@ -1,3 +1,10 @@
+/*
+
+SLoanRepo.java
+Handles repository for StudentLoan
+@Author(s) Frank Smith, Skyler Santiago, Dante Paniccia, Patel Parth
+
+*/
 package com.example.efinance.repository;
 
 import com.example.efinance.model.StudentLoan;

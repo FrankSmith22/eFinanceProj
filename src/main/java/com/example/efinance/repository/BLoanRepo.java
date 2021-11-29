@@ -1,3 +1,10 @@
+/*
+
+BLoanRepo.java
+Handles repository for Business Loan
+@Author(s) Frank Smith, Skyler Santiago, Dante Paniccia, Patel Parth
+
+*/
 package com.example.efinance.repository;
 
 import com.example.efinance.model.BusinessLoan;

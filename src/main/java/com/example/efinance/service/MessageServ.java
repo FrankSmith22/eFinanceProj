@@ -1,3 +1,10 @@
+/*
+
+MessageServ.java
+Interface for defining functionality of Message model service class
+@Author(s) Frank Smith, Skyler Santiago, Dante Paniccia, Patel Parth
+
+*/
 package com.example.efinance.service;
 
 import com.example.efinance.model.Message;

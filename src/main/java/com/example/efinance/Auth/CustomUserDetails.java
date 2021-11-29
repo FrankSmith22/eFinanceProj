@@ -1,3 +1,10 @@
+/*
+
+CustomUserDetails.java
+Handles user credentials as well as other data relating to user accounts
+@Author(s) Frank Smith, Skyler Santiago, Dante Paniccia, Parth Patel
+
+*/
 package com.example.efinance.Auth;
 
 import java.util.Collection;

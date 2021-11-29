@@ -1,3 +1,10 @@
+/*
+
+LoanController.java
+Handles communication between the view and model for all loan related routes
+@Author(s) Frank Smith, Skyler Santiago, Dante Paniccia, Patel Parth
+
+*/
 package com.example.efinance.controller;
 
 import com.example.efinance.model.AutoLoan;

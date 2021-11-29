@@ -1,3 +1,10 @@
+/*
+
+EFinanceApplication.java
+Functionality for servicing AutoLoan repository
+@Author(s) Frank Smith, Skyler Santiago, Dante Paniccia, Patel Parth
+
+*/
 package com.example.efinance;
 
 import org.springframework.boot.SpringApplication;

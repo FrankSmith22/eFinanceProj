@@ -1,3 +1,10 @@
+/*
+
+MessageRepo.java
+Handles repository for Messaging System
+@Author(s) Frank Smith, Skyler Santiago, Dante Paniccia, Patel Parth
+
+*/
 package com.example.efinance.repository;
 
 import com.example.efinance.model.Message;

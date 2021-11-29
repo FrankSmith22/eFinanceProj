@@ -1,3 +1,10 @@
+/*
+
+ALoanRepo.java
+Handles repository for AutoLoan
+@Author(s) Frank Smith, Skyler Santiago, Dante Paniccia, Patel Parth
+
+*/
 package com.example.efinance.repository;
 
 import com.example.efinance.model.AutoLoan;

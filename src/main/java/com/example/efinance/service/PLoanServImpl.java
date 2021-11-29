@@ -1,3 +1,10 @@
+/*
+
+PLoanServImpl.java
+Functionality for servicing PersonalLoan repository
+@Author(s) Frank Smith, Skyler Santiago, Dante Paniccia, Patel Parth
+
+*/
 package com.example.efinance.service;
 
 import com.example.efinance.model.PersonalLoan;

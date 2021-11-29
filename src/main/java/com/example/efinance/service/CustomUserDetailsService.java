@@ -1,3 +1,10 @@
+/*
+
+CustomUserDetailsService.java
+Functionality for servicing User repository
+@Author(s) Frank Smith, Skyler Santiago, Dante Paniccia, Patel Parth
+
+*/
 package com.example.efinance.service;
 
 import com.example.efinance.Auth.CustomUserDetails;

@@ -1,6 +1,12 @@
+/*
+
+SLoanServImpl.java
+Functionality for servicing StudentLoan repository
+@Author(s) Frank Smith, Skyler Santiago, Dante Paniccia, Patel Parth
+
+*/
 package com.example.efinance.service;
 
-import com.example.efinance.model.PersonalLoan;
 import com.example.efinance.model.StudentLoan;
 import com.example.efinance.repository.SLoanRepo;
 import org.springframework.beans.factory.annotation.Autowired;

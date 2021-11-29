@@ -1,3 +1,10 @@
+/*
+
+BusinessLoan.java
+Generates the columns and data feilds needed for the BusinessLoan
+@Author(s) Frank Smith, Skyler Santiago, Dante Paniccia, Patel Parth
+
+*/
 package com.example.efinance.model;
 
 import javax.persistence.*;
