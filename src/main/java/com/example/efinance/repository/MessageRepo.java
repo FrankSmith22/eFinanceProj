@@ -16,4 +16,7 @@ import java.util.List;
 public interface MessageRepo extends JpaRepository<Message,Long> {
     @Query("SELECT u FROM Message u WHERE u.user.uid = ?1")
     List<Message> findByUser(Long userID);
+
+    @Query("SELECT u FROM Message u WHERE u.messageTo = ?1")
+    List<Message> findByMessageTo(String userEmail);
 }

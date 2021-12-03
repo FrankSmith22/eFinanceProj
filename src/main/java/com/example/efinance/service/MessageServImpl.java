@@ -29,4 +29,9 @@ public class MessageServImpl implements MessageServ{
     public List<Message> accessByUser(Long userID) {
         return this.messageRepo.findByUser(userID);
     }
+
+    @Override
+    public List<Message> retrieveIncoming(String userEmail) {
+        return this.messageRepo.findByMessageTo(userEmail);
+    }
 }

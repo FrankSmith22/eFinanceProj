@@ -15,4 +15,6 @@ public interface MessageServ {
     public void saveMessage(Message message);
 
     public List<Message> accessByUser(Long userID);
+
+    public List<Message> retrieveIncoming(String userEmail);
 }

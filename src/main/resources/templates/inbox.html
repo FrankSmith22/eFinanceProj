@@ -62,8 +62,25 @@
         </div>
     </div>
     <div class="row mb-5">
-        <div class="col text-center">
-            <h3 class="text-danger">Message viewing coming soon!</h3>
+        <div class="col-2 col-sm-4 border-end">
+            <table class="table table-success">
+                <thead>
+                    <tr>
+                        <th class="p-2">Message Feed</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="message: ${messageList}">
+<!--                    <td th:text="${message.messageSubject + message.messageContent.substring(0, 10) + '...'}">null</td>-->
+                        <td>
+                            <a class="p-3" th:text="${message.messageSubject}" th:href="@{/view_message/{messageId}(messageId = ${message.messageId})}">null</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col">
+            <div id="messageView" th:text="${message.messageContent}"></div>
         </div>
     </div>
     <div class="row mb-5">
