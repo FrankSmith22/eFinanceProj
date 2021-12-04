@@ -28,4 +28,9 @@ public class PLoanServImpl implements PLoanServ {
     public List<PersonalLoan> accessByUser(Long userID){
         return this.pLoanRepo.findByUser(userID);
     }
+
+    @Override
+    public void processPayment(Long id, Long amount) {
+        this.pLoanRepo.processPayment(id, amount);
+    }
 }

@@ -26,4 +26,9 @@ public class ALoanServImpl implements ALoanServ {
     public List<AutoLoan> accessByUser(Long userID){
         return this.aLoanRepo.findByUser(userID);
     }
+
+    @Override
+    public void processPayment(Long id, Long amount) {
+        this.aLoanRepo.processPayment(id, amount);
+    }
 }

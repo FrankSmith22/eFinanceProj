@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="ISO-8859-1">
-    <title>Welcome to eFinance</title>
+    <title>Make A Payment</title>
     <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css"
           rel="stylesheet" />
@@ -37,16 +37,16 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item mr-2">
-                            <a class="nav-link disabled" th:href="@{/account_view}">Account</a>
+                            <a class="nav-link" th:href="@{/account_view}">Account</a>
                         </li>
                         <li class="nav-item mr-2">
-                            <a class="nav-link disabled" th:href="@{/loan_application}">Apply for a New Loan</a>
+                            <a class="nav-link" th:href="@{/loan_application}">Apply for a New Loan</a>
                         </li>
                         <li class="nav-item mr-2">
-                            <a class="nav-link disabled" th:href="@{/inbox}">Inbox</a>
+                            <a class="nav-link" th:href="@{/inbox}">Inbox</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link disabled" th:href="@{/}">Log Out</a>
+                            <a class="nav-link" th:href="@{/}">Log Out</a>
                         </li>
                     </ul>
                 </div>
@@ -54,10 +54,58 @@
         </div>
     </div>
 </nav>
+
 <div class="container text-center mb-5">
-    <h1 class="text-primary">Welcome to eFinance</h1>
-    <h3><a th:href="@{/register}" class="text-success">Register</a></h3>
-    <h3><a th:href="@{/login}" class="text-success">Login</a></h3>
+    <div class="row">
+        <div class="col col-md-6 mx-auto">
+            <h1 class="text-primary text-center">Make Payment</h1>
+            <br><br>
+            <h3 class="text-center">How much would you like to pay?</h3>
+            <h6>Total balance: <span th:text="*{balance}" class="text-danger"></span></h6>
+            <div class="card">
+                <div class="card-body">
+                    <form th:action="@{/make_payment/{type}/{id}(type=${type},id=${id})}" method="post" th:object="${payment}" id="payForm">
+                        <div class="form-group row">
+                            <label class="col-sm-6 col-form-label">Payment Amount</label>
+                            <div class="col">
+                                <input class="form-control" type="number" th:field="*{amount}" th:max="${balance}"/>
+                            </div>
+                        </div>
+                        <br><br>
+                        <div class="form-group row">
+                            <label class="col-sm-6 col-form-label">Full name on card</label>
+                            <div class="col">
+                                <input class="form-control" type="text"/>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-6 col-form-label">Card number</label>
+                            <div class="col">
+                                <input class="form-control" type="text"/>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-6 col-form-label">Expiration date</label>
+                            <div class="col-3">
+                                <input class="form-control" type="text" placeholder="MM/YY"/>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-6 col-form-label">Security code</label>
+                            <div class="col-2">
+                                <input class="form-control" type="text"/>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col">
+                                <input type="submit" class="btn btn-outline-success" value="Submit">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <footer class="site-footer pt-3">

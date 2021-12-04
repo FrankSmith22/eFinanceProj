@@ -75,7 +75,7 @@
     </div>
     <div class="row">
         <div class="col">
-            <a class="btn btn-info" th:href="@{/inbox}">Message Inbox</a>
+            <a class="btn btn-primary" th:href="@{/inbox}">Message Inbox</a>
         </div>
     </div>
     <br><br><hr><br><br>
@@ -105,7 +105,7 @@
                 <td class="align-middle" th:text="${autoLoan.carModel}">null</td>
                 <td class="align-middle" th:text="${autoLoan.carYear}">null</td>
                 <td class="align-middle" th:text="${autoLoan.tradeInInfo}">null</td>
-                <td class="align-middle" ><a class="btn btn-outline-primary">Pay</a></td>
+                <td class="align-middle"><a th:href="@{/make_payment/{type}/{id}(type='auto',id=${autoLoan.getLoanid()})}" class="btn btn-outline-primary btn-pay">Pay</a></td>
             </tr>
             </tbody>
         </table>
@@ -134,7 +134,7 @@
                 <td class="align-middle" th:text="${businessLoan.numEmployees}">null</td>
                 <td class="align-middle" th:text="${businessLoan.revenue}">null</td>
                 <td class="align-middle" th:text="${businessLoan.location}">null</td>
-                <td class="align-middle" ><a class="btn btn-outline-primary">Pay</a></td>
+                <td class="align-middle"><a th:href="@{/make_payment/{type}/{id}(type='business',id=${businessLoan.getLoanid()})}" class="btn btn-outline-primary btn-pay">Pay</a></td>
             </tr>
             </tbody>
         </table>
@@ -155,7 +155,7 @@
                 <td class="align-middle" th:text="${personalLoan.fullName}">null</td>
                 <td class="align-middle" th:text="${personalLoan.loanAmount}">null</td>
                 <td class="align-middle" th:text="${personalLoan.loanLengthInMonths}">null</td>
-                <td class="align-middle" ><a class="btn btn-outline-primary">Pay</a></td>
+                <td class="align-middle"><a th:href="@{/make_payment/{type}/{id}(type='personal',id=${personalLoan.getLoanid()})}" class="btn btn-outline-primary btn-pay">Pay</a></td>
             </tr>
             </tbody>
         </table>
@@ -184,12 +184,13 @@
                 <td class="align-middle" th:text="${studentLoan.gpa}">null</td>
                 <td class="align-middle" th:text="${studentLoan.numSemesters}">null</td>
                 <td class="align-middle" th:text="${studentLoan.location}">null</td>
-                <td class="align-middle"><a class="btn btn-outline-primary">Pay</a></td>
+                <td class="align-middle"><a th:href="@{/make_payment/{type}/{id}/{balance}(type='student',id=${studentLoan.getLoanid()},balance=${studentLoan.getLoanAmount()})}" class="btn btn-outline-primary btn-pay">Pay</a></td>
             </tr>
             </tbody>
         </table>
     </div>
 </div>
+
 <footer class="site-footer pt-3">
     <div class="container">
         <div class="row">
@@ -198,7 +199,7 @@
                 <ul class="list-unstyled">
                     <li><a th:href="@{/}">Home/Log Out</a></li>
                     <li><a th:href="@{/account_view}">Account</a></li>
-                    <li><a th:href="@{/loan_select}">New Loan</a></li>
+                    <li><a th:href="@{/loan_application}">New Loan</a></li>
                 </ul>
             </div>
             <div class="col-4 text-center">
@@ -253,5 +254,6 @@
         </div>
     </div>
 </footer>
+
 </body>
 </html>

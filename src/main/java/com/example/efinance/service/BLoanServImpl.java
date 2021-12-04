@@ -29,5 +29,10 @@ public class BLoanServImpl implements BLoanServ {
     public List<BusinessLoan> accessByUser(Long userID){
         return this.bLoanRepo.findByUser(userID);
     }
+
+    @Override
+    public void processPayment(Long id, Long amount) {
+        this.bLoanRepo.processPayment(id, amount);
+    }
 }
 

@@ -26,4 +26,9 @@ public class SLoanServImpl implements SLoanServ {
     public List<StudentLoan> accessByUser(Long userID){
         return this.sLoanRepo.findByUser(userID);
     }
+
+    @Override
+    public void processPayment(Long id, Long amount) {
+        this.sLoanRepo.processPayment(id, amount);
+    }
 }

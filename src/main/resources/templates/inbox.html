@@ -71,7 +71,6 @@
                 </thead>
                 <tbody>
                     <tr th:each="message: ${messageList}">
-<!--                    <td th:text="${message.messageSubject + message.messageContent.substring(0, 10) + '...'}">null</td>-->
                         <td>
                             <a class="p-3" th:text="${message.messageSubject}" th:href="@{/view_message/{messageId}(messageId = ${message.messageId})}">null</a>
                         </td>
@@ -98,7 +97,7 @@
                 <ul class="list-unstyled">
                     <li><a th:href="@{/}">Home/Log Out</a></li>
                     <li><a th:href="@{/account_view}">Account</a></li>
-                    <li><a th:href="@{/loan_select}">New Loan</a></li>
+                    <li><a th:href="@{/loan_application}">New Loan</a></li>
                 </ul>
             </div>
             <div class="col-4 text-center">

@@ -15,4 +15,6 @@ public interface ALoanServ {
     void saveLoan(AutoLoan autoLoan);
 
     public List<AutoLoan> accessByUser(Long userID);
+
+    public void processPayment(Long id, Long amount);
 }

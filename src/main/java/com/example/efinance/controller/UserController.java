@@ -81,6 +81,8 @@ public class UserController {
         model.addAttribute("pLoanList", pLoanList);
         model.addAttribute("sLoanList", sLoanList);
 
+        model.addAttribute("payment", new Payment());
+
         return "account_view";
     }
 

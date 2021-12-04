@@ -15,4 +15,6 @@ public interface PLoanServ {
     void saveLoan(PersonalLoan personalLoan);
 
     public List<PersonalLoan> accessByUser(Long userID);
+
+    public void processPayment(Long id, Long amount);
 }
