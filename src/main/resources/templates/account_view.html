@@ -105,7 +105,7 @@
                 <td class="align-middle" th:text="${autoLoan.carModel}">null</td>
                 <td class="align-middle" th:text="${autoLoan.carYear}">null</td>
                 <td class="align-middle" th:text="${autoLoan.tradeInInfo}">null</td>
-                <td class="align-middle"><a th:href="@{/make_payment/{type}/{id}(type='auto',id=${autoLoan.getLoanid()})}" class="btn btn-outline-primary btn-pay">Pay</a></td>
+                <td class="align-middle"><a th:href="@{/make_payment/{type}/{id}/{balance}(type='auto',id=${autoLoan.getLoanid()},balance=${autoLoan.getLoanAmount()})}" class="btn btn-outline-primary btn-pay">Pay</a></td>
             </tr>
             </tbody>
         </table>
@@ -134,7 +134,7 @@
                 <td class="align-middle" th:text="${businessLoan.numEmployees}">null</td>
                 <td class="align-middle" th:text="${businessLoan.revenue}">null</td>
                 <td class="align-middle" th:text="${businessLoan.location}">null</td>
-                <td class="align-middle"><a th:href="@{/make_payment/{type}/{id}(type='business',id=${businessLoan.getLoanid()})}" class="btn btn-outline-primary btn-pay">Pay</a></td>
+                <td class="align-middle"><a th:href="@{/make_payment/{type}/{id}/{balance}(type='business',id=${businessLoan.getLoanid()},balance=${businessLoan.getLoanAmount()})}" class="btn btn-outline-primary btn-pay">Pay</a></td>
             </tr>
             </tbody>
         </table>
@@ -155,7 +155,7 @@
                 <td class="align-middle" th:text="${personalLoan.fullName}">null</td>
                 <td class="align-middle" th:text="${personalLoan.loanAmount}">null</td>
                 <td class="align-middle" th:text="${personalLoan.loanLengthInMonths}">null</td>
-                <td class="align-middle"><a th:href="@{/make_payment/{type}/{id}(type='personal',id=${personalLoan.getLoanid()})}" class="btn btn-outline-primary btn-pay">Pay</a></td>
+                <td class="align-middle"><a th:href="@{/make_payment/{type}/{id}/{balance}(type='personal',id=${personalLoan.getLoanid()},balance=${personalLoan.getLoanAmount()})}" class="btn btn-outline-primary btn-pay">Pay</a></td>
             </tr>
             </tbody>
         </table>
