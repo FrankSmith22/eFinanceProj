@@ -96,9 +96,9 @@
             <div class="col-3 offset-1">
                 <h5 class="text-white">Quick Links</h5>
                 <ul class="list-unstyled">
-                    <li><a th:href="@{/}">Home/Log Out</a></li>
-                    <li><a th:href="@{/account_view}">Account</a></li>
-                    <li><a th:href="@{/loan_application}">New Loan</a></li>
+                    <li><a style="pointer-events: none; cursor: default;" th:href="@{/}">Home/Log Out</a></li>
+                    <li><a style="pointer-events: none; cursor: default;" th:href="@{/account_view}">Account</a></li>
+                    <li><a style="pointer-events: none; cursor: default;" th:href="@{/loan_application}">New Loan</a></li>
                 </ul>
             </div>
             <div class="col-4 text-center">
@@ -136,9 +136,9 @@
             <div class="col-3 offset-2 text-darker-footer">
                 <h4>User Information</h4>
                 <br/>
-                <span>User name: [[${#request.userPrincipal.principal.userName}]]</span>
+                <span>User name: Please register first</span>
                 <br/>
-                <span>Email: [[${#request.userPrincipal.principal.userEmail}]]</span>
+                <span>Email: Please register first</span>
                 <br>
                 <a th:href="@{/account_view}">Go To Account</a>
             </div>
